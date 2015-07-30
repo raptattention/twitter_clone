@@ -1,5 +1,6 @@
-// Hpai is class
+// Hapi is class
 var Hapi = require('hapi');
+var Path = require('path');
 
 // Instantiate
 var server = new Hapi.Server();
@@ -16,7 +17,26 @@ server.connection({
 	}
 });
 
+server.views({
+  engines: {
+    html: require('handlebars')
+  },
+  path: Path.join(__dirname, "templates") // Users/lilialaw/GA/twitter_clone/templates
+})
+
 var plugins = [
+  { register: require('./routes/static-pages.js')},
+	{ register: require('./routes/users.js')},
+  { register: require('./routes/sessions.js')},
+  {
+    register: require('yar'),
+    options: {
+      cookieOptions: {
+        password: 'asdfasdfasdg',
+        isSecure: false // we are not going to https, yet, for development
+      }
+    }
+  },
 	// Require MongoDB
 	{
 		register: require('hapi-mongodb'),
@@ -30,15 +50,6 @@ var plugins = [
 		}
 	}
 ];
-
-// Print "hello world!" on /hello
-// server.route({
-// 	method: 'GET',
-// 	path: '/hello',
-// 	handler: function(request, reply){
-// 		reply('hello world!');
-// 	}
-// });
 
 // Start server
 server.register(plugins, function(err){

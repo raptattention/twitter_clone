@@ -1,0 +1,23 @@
+body {
+	background: url('http://www.drodd.com/images11/twitter-backgrounds8.jpg');
+}
+
+#signSheet {
+	background: lightgrey;
+	border-radius: 5px;
+	padding-bottom: 20px;
+}
+
+h3 {
+	text-align: center;
+}
+
+input {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.navbar {
+	margin-bottom: 50px;
+	opacity: 0.5;
+}
