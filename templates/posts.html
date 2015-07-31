@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Twitter Clone Tweets</title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+		<script type="text/javascript" src = "../public/posts.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+		<link rel="stylesheet" type="text/css" href = "../public/custom.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" display = "inline-block" href="#">
+						Twitter Clone
+					</a>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+			  <div class="col-xs-12" id="tweet">
+			    <div class="input-group">
+			      <input type="text" name="message" class="form-control" placeholder="Input your message!">
+			      <span class="input-group-btn">
+			        <button class="btn btn-default" id="submitTweet" type="button">Submit!</button>
+			      </span>
+			    </div>
+			  </div>
+			</div>
+      <h3>Tweets</h3>
+      <div id="tweets" class="col-xs-12">
+      </div>
+		</div>
+	</body>
+</html>

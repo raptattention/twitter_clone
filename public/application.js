@@ -7,11 +7,6 @@ $(document).ready(function(){
     var username = $('#signUp > input[id="signUpUsername"]');
     var password = $('#signUp > input[id="signUpPassword"]');
 
-    console.log(email.val());
-    console.log(name.val());
-    console.log(username.val());
-    console.log(password.val());
-
     $.ajax({
       type: 'POST',
       url: '/users',
@@ -38,7 +33,7 @@ $(document).ready(function(){
 
     $.ajax({
       type: 'POST',
-      url: 'sessions',
+      url: '/sessions',
       data: {
         user: {
           username: username.val(),
@@ -51,7 +46,7 @@ $(document).ready(function(){
       },
       success: function(response){
         if (response.authenticated) {
-          window.location.href = "posts";
+          window.location.href = "./posts.html";
         }
       }
     });
