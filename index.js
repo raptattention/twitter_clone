@@ -33,7 +33,7 @@ var plugins = [
     register: require('yar'),
     options: {
       cookieOptions: {
-        password: 'asdfasdfasdg',
+        password: process.env.COOKIE_PASSWORD || 'asdfasdfasdg',
         isSecure: false // we are not going to https, yet, for development
       }
     }
